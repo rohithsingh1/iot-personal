@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<style>
+    nav {
+        background-color: black;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+</style>
+
+<body>
+    <nav class="w-100 ">
+        <button class="btn btn-light mr-3 " onclick="RENDER('login')">Logout</button>
+    </nav>
+
+    <h1 class="text-center">Accident Detection</h1>
+
+    <div class="container mt-5 w-50 signup d-none">
+        <form class="form_info contact_info">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" id="name">
+
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="text" id="password">
+
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input class="form-control" type="text" id="phone">
+            </div>
+            <div class="form-group">
+                <label for="contact_name">Emergency Contact Name 1</label>
+                <input class="form-control" type="text" id="contact_1" name="contact_name_1">
+            </div>
+            <div class="form-group">
+                <label for="emergency_contact">Emergency Contact Number </label>
+                <input class="form-control" type="text" id="emergency_contact_1">
+            </div>
+            <div class="form-group">
+                <label for="contact_name">Emergency Contact Name 2</label>
+                <input class="form-control" type="text" id="contact_2" name="contact_name_2">
+            </div>
+            <div class="form-group">
+                <label for="emergency_contact">Emergency Contact Number</label>
+                <input class="form-control" type="text" id="emergency_contact_2">
+            </div>
+            <div class="form-group">
+                <label for="contact_name">Emergency Contact Name 3</label>
+                <input class="form-control" type="text" id="contact_3" name="contact_name_3">
+            </div>
+            <div class="form-group">
+                <label for="emergency_contact">Emergency Contact Number</label>
+                <input class="form-control" type="text" id="emergency_contact_3">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vtype" id="2wheel" value="2">
+                <label class="form-check-label" for="2wheel">
+                    2 Wheeler
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vtype" id="4wheel" value="4">
+                <label class="form-check-label" for="4Wheel">
+                    4 Wheeler
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <p>have an account? <button class="btn btn btn-outline-success " type="button"
+                    onclick="RENDER('login')">Login</button></p>
+        </form>
+    </div>
+    <div class="container mt-5 w-50 login">
+        <form class="form_info sign_in">
+
+
+            <div class="form-group">
+                <label for="phone_num">Phone</label>
+                <input class="form-control" type="text" id="phone_num" name="phone_num" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="text" id="password" required>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p>don't have an account? <button class="btn btn btn-outline-success " type="button"
+                    onclick="RENDER('signup')">Sign
+                    UP</button></p>
+        </form>
+    </div>
+
+
+    <div class="container mt-5 details d-none">
+
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- <button onclick="update_val('sathvik')">add</button> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyABhq6khGslcqVV4HE4T9vyFXeuSFGxK7Y",
+            authDomain: "accident-detection-syste-a1ad8.firebaseapp.com",
+            databaseURL: "https://accident-detection-syste-a1ad8-default-rtdb.firebaseio.com",
+            projectId: "accident-detection-syste-a1ad8",
+            storageBucket: "accident-detection-syste-a1ad8.appspot.com",
+            messagingSenderId: "890711908389",
+            appId: "1:890711908389:web:19d4df6c4352b011b5dfcc",
+            measurementId: "G-BD3CZ05WPK"
+
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const dbref = firebase.database().ref().child("phone");
+        const db = firebase.firestore()
+
+    </script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
